@@ -15,8 +15,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 [] The application should have an input form that collects _employee first name, last name, ID number, job title, annual salary_.
 []A 'Submit' button should collect form information and:
-    [] store the information to calculate monthly costs
-    [] append information to the dom
+    [] store the information in an array (to later calculate monthly costs)
+    [] append the gathered information to the dom
     [] clear the input fields
     [] calculate monthly costs and append to the DOM
     []if the total monthly cost > 20000 add a red background to the total monthly cost in the DOM

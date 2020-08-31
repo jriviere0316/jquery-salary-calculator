@@ -1,15 +1,6 @@
 $(document).ready(onReady)
-function onReady() {
-    //console.log('JQ JS');
 
-    $('#addInfoButton').on('click', addEmpItem);
-    $('#addInfoButton').on('click', calculateMonthly);
-
-
-
-    document.getElementById("addInfoButton").disabled = true;
-    $(document).on('click', '.deleteButton', onRemove);
-}//END ONREADY
+//I'm SO sorry for how messy this is
 
 //GLOBALS
 let empInfo = [];
@@ -18,11 +9,9 @@ let salaryCombo = 0;
 
 function addEmpItem() {
     //console.log('ya clicked me');
-    //
+    //is this dumb?  i feel like this is dumb...  but don't i need this for line 5?
     addEmpToList(firstName, lastName, idNumber, jobTitle, annualSalary)
 }//END addEmpItem
-
-
 
 function addEmpToList(firstNameInput, lastNameInput, idNumberInput, jobTitleInput, annualSalaryInput) {
     const newEmpObject = {
@@ -43,9 +32,6 @@ function addEmpToList(firstNameInput, lastNameInput, idNumberInput, jobTitleInpu
     displayEmployee();
     inputManagement();
 }//END addEmpToList
-
-
-
 
 function calculateMonthly() {
     let monthlySalarys = 0;
@@ -68,16 +54,11 @@ function calculateMonthly() {
     totalSalaries = salaryCombo
 }// END calculateMonthly
 
-
-
-
 function displayEmployee() {
-
     let el = $('#employeeTable');
     el.empty();
     for (let i = 0; i < empInfo.length; i++) {
         el.append(`
-
         <tr>
            <td>${empInfo[i].first} </td>+
            <td>${empInfo[i].last}</td> +
@@ -88,9 +69,6 @@ function displayEmployee() {
         </tr>`);
     }
 }//END displayEmployee
-
-
-
 
 function inputManagement() {
     let bt = document.getElementById('addInfoButton');
@@ -106,18 +84,22 @@ function inputManagement() {
     }
 }//END inputManagement
 
-
+function onReady() {
+    //console.log('JQ JS');
+    $('#addInfoButton').on('click', addEmpItem);
+    $('#addInfoButton').on('click', calculateMonthly);
+    document.getElementById("addInfoButton").disabled = true;
+    $(document).on('click', '.deleteButton', onRemove);
+}//END ONREADY
 
 function onRemove() {
     console.log('clicked the remove button', $(this));
-
     $(this).parent().parent().remove()//THIS REMOVES THE CORRESPONDING ITEMS FROM THE DOM
     let test = $(this).closest('tr').find("#idNumber").text();
     console.log(test);
     let index = empInfo.findIndex(function (item) { return item.idNumber === test });//This doesn't work, because index returns as -1
-    console.log(index);
+    console.log(index);// returns -1 
     empInfo.splice(index, 1);
     console.log(empInfo);
     calculateMonthly();
-
 }//ENDonRemove

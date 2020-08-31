@@ -1,0 +1,21 @@
+body {
+    background-color: aqua;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    width: 100px;
+}
+
+td {
+    text-align: center;
+    background-color: azure;
+}
+
+th {
+    background-color:lightgrey;
+}

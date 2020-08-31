@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="jquery-3.5.1.min.js"></script>
     <script src="client.js"></script>
+    <link rel="stylesheet" href="style.css">
+
     <title>salaryCalculator</title>
     <H1>John Riviere jQuery Salary Calculator</H1>
 </head>
 
 <body>
-    <input type="text" id="firstName" placeholder="First Name">
-    <input type="text" id="lastName" placeholder="Last Name">
-    <input type="text" id="idNumber" placeholder="ID Number">
-    <input type="text" id="jobTitle" placeholder="Job Title">
-    <input type="text" id="annualSalary" placeholder="Annual Salary">
-    <button id="addInfoButton">Add Employee</button>
+    <input type="text" id="firstName" placeholder="First Name" onkeyup="inputManagement()">
+    <input type="text" id="lastName" placeholder="Last Name" onkeyup="inputManagement()">
+    <input type="text" id="idNumber" placeholder="ID Number" onkeyup="inputManagement()">
+    <input type="text" id="jobTitle" placeholder="Job Title" onkeyup="inputManagement()">
+    <input type="text" id="annualSalary" placeholder="Annual Salary" onkeyup="inputManagement()">
+    <button id="addInfoButton">Submit</button>
 
     <hr />
     <table id="tablelabels" style="width:100%">
@@ -26,13 +28,14 @@
             <th>ID</th>
             <th>Job Title</th>
             <th>Annual Salary</th>
+            <th></th>
         </tr>
-    </table>
-    <hr />
 
-    <table id="employeeTable" style="width:100%">
 
-    </table>
+
+        <table id="employeeTable" style="width:100%">
+
+        </table>
 
 </body>
 
